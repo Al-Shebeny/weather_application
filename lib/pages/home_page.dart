@@ -32,8 +32,7 @@ class HomePage extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         } else if (state is WeatherSuccess) {
-          weatherData = BlocProvider.of<WeatherCubite>(context).weatherModel;
-          return SuccessView(weatherData: weatherData);
+          return SuccessView(weatherData: state.weatherModel);
         } else if (state is WeatherFailure) {
           return const Center(
             child: Text('there is some thing wronge'),
